@@ -47,6 +47,33 @@
             padding: 3rem 1.5rem;
         }
 
+        /* Estilos para a imagem de conscientização */
+        .imagem-conscientizacao {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .imagem-conscientizacao img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .imagem-conscientizacao img:hover {
+            transform: scale(1.02);
+        }
+
+        .legenda-imagem {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #4a627a;
+            font-style: italic;
+        }
+
         /* Grid dos cards */
         .cards {
             display: flex;
@@ -293,6 +320,9 @@
             .btn-explicacao {
                 padding: 0.7rem;
             }
+            .imagem-conscientizacao img {
+                max-height: 250px;
+            }
         }
     </style>
 </head>
@@ -303,6 +333,13 @@
     </header>
 
     <div class="container">
+        <!-- IMAGEM ADICIONADA AQUI conforme solicitado -->
+        <div class="imagem-conscientizacao">
+            <img src="https://s2-crescer.glbimg.com/U7A1bpIbac-ZptDMCgo8ZklHKME=/0x0:2000x2000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_19863d4200d245c3a2ff5b383f548bb6/internal_photos/bs/2024/1/7/31Z3gZRA6ejZbE67bCFg/8706740-3972124.jpg" 
+                 alt="Ilustração sobre conscientização contra bullying e cyberbullying">
+            <div class="legenda-imagem">✊ Respeito e empatia: juntos contra o bullying e cyberbullying</div>
+        </div>
+
         <div class="cards">
             <!-- Card Bullying Tradicional -->
             <div class="card">
@@ -446,8 +483,6 @@
             } else {
                 divBullying.innerHTML = textoBullying;
                 bullyingAberto = true;
-                // Se a explicação de cyber estiver aberta, não interfere, mas pode manter ambas abertas simultaneamente
-                // Isso dá liberdade ao usuário.
             }
         }
 
@@ -465,10 +500,6 @@
         // Adiciona os eventos de clique nos botões
         btnBullying.addEventListener('click', toggleBullying);
         btnCyber.addEventListener('click', toggleCyber);
-
-        // Garantir que não haja conflitos e que a animação funcione corretamente
-        // As explicações são inseridas com HTML seguro.
-        // Além disso, garantir acessibilidade: os botões têm cursor pointer e são bem visíveis.
     </script>
 </body>
 </html>
