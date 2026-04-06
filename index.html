@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullying e Cyberbullying - Informação e Conscientização</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #1a2a3a;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Grid dos cards */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+            border-bottom: 3px solid;
+        }
+
+        .card-header.bullying {
+            border-bottom-color: #e74c3c;
+            background: linear-gradient(135deg, #fff5f5 0%, white 100%);
+        }
+
+        .card-header.cyber {
+            border-bottom-color: #3498db;
+            background: linear-gradient(135deg, #f0f8ff 0%, white 100%);
+        }
+
+        .card-header h2 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-header.bullying h2 {
+            color: #c0392b;
+        }
+
+        .card-header.cyber h2 {
+            color: #2980b9;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .descricao {
+            margin-bottom: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .descricao p {
+            margin-bottom: 0.8rem;
+        }
+
+        .lista {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .lista li {
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .lista li::before {
+            content: "⚠️";
+        }
+
+        /* Botão estilo */
+        .btn-explicacao {
+            width: 100%;
+            padding: 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .btn-bullying {
+            background: #e74c3c;
+            color: white;
+            box-shadow: 0 4px 12px rgba(231,76,60,0.3);
+        }
+
+        .btn-bullying:hover {
+            background: #c0392b;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(231,76,60,0.4);
+        }
+
+        .btn-cyber {
+            background: #3498db;
+            color: white;
+            box-shadow: 0 4px 12px rgba(52,152,219,0.3);
+        }
+
+        .btn-cyber:hover {
+            background: #2980b9;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(52,152,219,0.4);
+        }
+
+        /* Caixa de explicação */
+        .explicacao {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: #fef9e7;
+            border-left: 5px solid;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .explicacao-bully {
+            border-left-color: #e74c3c;
+            background: #fff5f5;
+        }
+
+        .explicacao-cyber {
+            border-left-color: #3498db;
+            background: #eef7ff;
+        }
+
+        .explicacao strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .explicacao p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Seção de dicas */
+        .dicas-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2a3a 100%);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .dicas-section h3 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .dicas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .dica-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            padding: 0.8rem 1.3rem;
+            border-radius: 3rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .dica-item:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Frases de impacto */
+        .frase-impacto {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            color: #2c3e50;
+            font-style: italic;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1a2a3a;
+            color: #a0c4e2;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            .card-header h2 {
+                font-size: 1.4rem;
+            }
+            .btn-explicacao {
+                padding: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚫 Bullying & Cyberbullying</h1>
+        <p>Informação é a melhor ferramenta para combater o preconceito, a violência e promover o respeito.</p>
+    </header>
+
+    <div class="container">
+        <div class="cards">
+            <!-- Card Bullying Tradicional -->
+            <div class="card">
+                <div class="card-header bullying">
+                    <h2>
+                        <span>👊</span> 
+                        Bullying
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="descricao">
+                        <p>Comportamento agressivo, intencional e repetitivo que ocorre sem motivação clara, causando dor e sofrimento à vítima. Geralmente existe um desequilíbrio de poder entre as partes.</p>
+                        <ul class="lista">
+                            <li>Violência física (socos, chutes, empurrões)</li>
+                            <li>Agressões verbais (xingamentos, apelidos ofensivos)</li>
+                            <li>Exclusão social proposital</li>
+                            <li>Rumores e fofocas maliciosas</li>
+                        </ul>
+                    </div>
+                    <!-- Botão para explicação do Bullying -->
+                    <button class="btn-explicacao btn-bullying" id="btnBullying">
+                        📖 Clique para explicação detalhada
+                    </button>
+                    <!-- Div onde a explicação aparecerá -->
+                    <div id="explicacaoBullying"></div>
+                </div>
+            </div>
+
+            <!-- Card Cyberbullying -->
+            <div class="card">
+                <div class="card-header cyber">
+                    <h2>
+                        <span>💻📱</span> 
+                        Cyberbullying
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="descricao">
+                        <p>Bullying praticado através de meios digitais: redes sociais, aplicativos de mensagens, e-mails, fóruns e jogos online. Pode acontecer 24/7 e atingir um público muito maior.</p>
+                        <ul class="lista">
+                            <li>Humilhação pública em redes sociais</li>
+                            <li>Compartilhamento não autorizado de fotos/vídeos</li>
+                            <li>Criação de perfis falsos para difamar</li>
+                            <li>Ameaças e mensagens ofensivas anônimas</li>
+                        </ul>
+                    </div>
+                    <!-- Botão para explicação do Cyberbullying -->
+                    <button class="btn-explicacao btn-cyber" id="btnCyber">
+                        🌐 Clique para explicação detalhada
+                    </button>
+                    <!-- Div onde a explicação aparecerá -->
+                    <div id="explicacaoCyber"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Dicas e Ajuda -->
+        <div class="dicas-section">
+            <h3>
+                <span>💡</span> 
+                Como agir e se proteger
+            </h3>
+            <div class="dicas-grid">
+                <div class="dica-item">🗣️ Converse com alguém de confiança</div>
+                <div class="dica-item">📸 Salve prints e provas</div>
+                <div class="dica-item">🚨 Denuncie nas plataformas</div>
+                <div class="dica-item">🏫 Procure a direção da escola</div>
+                <div class="dica-item">❤️ Ofereça apoio à vítima</div>
+                <div class="dica-item">⚖️ Boletim de ocorrência (casos graves)</div>
+                <div class="dica-item">🧘 Cuide da sua saúde mental</div>
+            </div>
+        </div>
+
+        <!-- Frase de impacto -->
+        <div class="frase-impacto">
+            "O silêncio diante do bullying é a maior arma do agressor. Falar, denunciar e acolher são atos de coragem e transformação."
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 - Campanha de Conscientização | Respeito dentro e fora da internet</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Se você está passando por alguma situação difícil, procure ajuda profissional ou disque 100 (Direitos Humanos).</p>
+    </footer>
+
+    <script>
+        // Referências dos elementos
+        const btnBullying = document.getElementById('btnBullying');
+        const divBullying = document.getElementById('explicacaoBullying');
+        const btnCyber = document.getElementById('btnCyber');
+        const divCyber = document.getElementById('explicacaoCyber');
+
+        // Estados para controle (mostrar/ocultar)
+        let bullyingAberto = false;
+        let cyberAberto = false;
+
+        // Texto completo da explicação sobre Bullying
+        const textoBullying = `
+            <div class="explicacao explicacao-bully">
+                <strong>📌 O que é Bullying?</strong>
+                <p>O termo "bullying" vem do inglês "bully" (valentão). É caracterizado por atos de violência física ou psicológica, de forma intencional e repetitiva, ocorrendo em relações onde há desequilíbrio de poder. Não se trata de uma simples brincadeira ou conflito isolado.</p>
+                <strong>🎯 Principais características:</strong>
+                <p>• <strong>Intencionalidade:</strong> O agressor tem a intenção de causar dor ou humilhação.<br>
+                • <strong>Repetição:</strong> Acontece várias vezes ao longo do tempo.<br>
+                • <strong>Desequilíbrio de poder:</strong> A vítima tem dificuldade de se defender.</p>
+                <strong>⚠️ Consequências graves:</strong>
+                <p>Baixa autoestima, depressão, ansiedade, queda no rendimento escolar, isolamento social, e em casos extremos, pensamentos suicidas. O bullying não é "parte do crescimento" — precisa ser combatido.</p>
+                <strong>🤝 O que fazer?</strong>
+                <p>Nunca normalize a agressão. Acolha a vítima, escute sem julgar, ajude a denunciar para adultos responsáveis (professores, pais, coordenadores). Escolas devem ter programas antibullying.</p>
+            </div>
+        `;
+
+        // Texto completo da explicação sobre Cyberbullying
+        const textoCyber = `
+            <div class="explicacao explicacao-cyber">
+                <strong>📌 O que é Cyberbullying?</strong>
+                <p>É o bullying praticado através de tecnologias digitais. Pode ocorrer em redes sociais (Instagram, TikTok, Twitter, Facebook), aplicativos de mensagem (WhatsApp, Telegram), jogos online, e-mails, ou qualquer ambiente virtual. Atinge a vítima 24 horas por dia, mesmo dentro de casa.</p>
+                <strong>🎯 Formas comuns de cyberbullying:</strong>
+                <p>• <strong>Assédio virtual:</strong> Envio repetido de mensagens ofensivas ou ameaçadoras.<br>
+                • <strong>Difamação:</strong> Espalhar mentiras ou rumores online.<br>
+                • <strong>Exposição não consentida:</strong> Compartilhar fotos íntimas ou constrangedoras sem autorização.<br>
+                • <strong>Impersonação (falso perfil):</strong> Criar contas falsas para humilhar a vítima.<br>
+                • <strong>Exclusão virtual:</strong> Isolar propositalmente a pessoa de grupos ou eventos online.</p>
+                <strong>⚠️ Impactos e diferenças do bullying tradicional:</strong>
+                <p>O cyberbullying pode ser anônimo, alcançar milhares de pessoas em minutos e deixar registros permanentes (prints, posts). As consequências incluem depressão severa, transtornos de ansiedade, pânico, ideação suicida e, em muitos casos, a vítima se sente sem saída.</p>
+                <strong>🛡️ Como se proteger e agir:</strong>
+                <p>• Não responda provocações — agressores buscam reações.<br>
+                • Guarde todas as provas: prints, URLs, datas e horários.<br>
+                • Denuncie nas plataformas (todas têm canais de denúncia).<br>
+                • Bloqueie o agressor e ajuste suas configurações de privacidade.<br>
+                • Procure apoio de familiares, amigos ou psicólogos.<br>
+                • Em casos graves, registre boletim de ocorrência (Lei 13.185/2015 - Programa de Combate ao Bullying e Cyberbullying).</p>
+                <strong>💬 Lembre-se:</strong> Ninguém merece sofrer em silêncio. Falar sobre o problema é o primeiro passo para resolvê-lo.
+            </div>
+        `;
+
+        // Função para alternar a explicação do Bullying
+        function toggleBullying() {
+            if (bullyingAberto) {
+                divBullying.innerHTML = '';
+                bullyingAberto = false;
+            } else {
+                divBullying.innerHTML = textoBullying;
+                bullyingAberto = true;
+                // Se a explicação de cyber estiver aberta, não interfere, mas pode manter ambas abertas simultaneamente
+                // Isso dá liberdade ao usuário.
+            }
+        }
+
+        // Função para alternar a explicação do Cyberbullying
+        function toggleCyber() {
+            if (cyberAberto) {
+                divCyber.innerHTML = '';
+                cyberAberto = false;
+            } else {
+                divCyber.innerHTML = textoCyber;
+                cyberAberto = true;
+            }
+        }
+
+        // Adiciona os eventos de clique nos botões
+        btnBullying.addEventListener('click', toggleBullying);
+        btnCyber.addEventListener('click', toggleCyber);
+
+        // Garantir que não haja conflitos e que a animação funcione corretamente
+        // As explicações são inseridas com HTML seguro.
+        // Além disso, garantir acessibilidade: os botões têm cursor pointer e são bem visíveis.
+    </script>
+</body>
+</html>
