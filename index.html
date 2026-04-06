@@ -242,6 +242,48 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Estilo para o vídeo do YouTube */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 1.5rem;
+        }
+
+        .video-section {
+            margin: 2.5rem 0;
+        }
+
+        .video-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e4660;
+        }
+
+        .legenda-video {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4a627a;
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
         /* Seção de dicas */
         .dicas-section {
             background: linear-gradient(135deg, #2c3e50 0%, #1a2a3a 100%);
@@ -323,6 +365,9 @@
             .imagem-conscientizacao img {
                 max-height: 250px;
             }
+            .video-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -333,13 +378,14 @@
     </header>
 
     <div class="container">
-        <!-- IMAGEM ADICIONADA AQUI conforme solicitado -->
+        <!-- IMAGEM DE CONSCIENTIZAÇÃO -->
         <div class="imagem-conscientizacao">
             <img src="https://s2-crescer.glbimg.com/U7A1bpIbac-ZptDMCgo8ZklHKME=/0x0:2000x2000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_19863d4200d245c3a2ff5b383f548bb6/internal_photos/bs/2024/1/7/31Z3gZRA6ejZbE67bCFg/8706740-3972124.jpg" 
                  alt="Ilustração sobre conscientização contra bullying e cyberbullying">
             <div class="legenda-imagem">✊ Respeito e empatia: juntos contra o bullying e cyberbullying</div>
         </div>
 
+        <!-- CARDS COM OS TÓPICOS E BOTÕES DE EXPLICAÇÃO -->
         <div class="cards">
             <!-- Card Bullying Tradicional -->
             <div class="card">
@@ -393,6 +439,24 @@
                     <!-- Div onde a explicação aparecerá -->
                     <div id="explicacaoCyber"></div>
                 </div>
+            </div>
+        </div>
+
+        <!-- VÍDEO DO YOUTUBE - Campanha "Corta com a Violência" -->
+        <div class="video-section">
+            <div class="video-title">
+                🎬 Campanha "Corta com a Violência" - Bullying
+            </div>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/ctWfJJmpmXY" 
+                    title="Corta com a Violência: Bullying - Campanha de conscientização"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="legenda-video">
+                📢 Campanha da Associação Portuguesa de Apoio à Vítima: "Quem não te respeita não te merece"
             </div>
         </div>
 
